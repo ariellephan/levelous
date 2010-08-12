@@ -1,0 +1,25 @@
+<h1>edit profile</h1>
+ 
+<% form_for @user, :html => { :multipart => :true }, :url => url_for(:controller => 'users', :action => 'show', :id => @user.id ) do |f| %>
+  <%= f.error_messages %><br />
+  
+  <%= f.label 'edit location' %><br />
+  <%= f.text_field :location %><br />
+  <br />
+
+  <%= f.label 'edit password', f.object.new_record? ? nil : "change password" %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %><br />
+  <br />
+
+  <%= f.label 'edit profile pic' %><br />
+  <%= f.file_field :avatar %><br />
+  <br />
+
+  <%= f.submit "update" %>
+
+   or <%= link_to "cancel", url_for(:controller => 'users', :action => 'show', :id => @user.id ) %>
+<% end %>

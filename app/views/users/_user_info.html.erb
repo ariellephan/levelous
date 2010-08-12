@@ -1,0 +1,34 @@
+<div id="userInfo">
+	<% link_to user.avatar.url(:original), :target => '_blank' do %>  
+		<%=image_tag user.avatar.url(:thumb), :alt=>'' %>
+	<% end %>
+	<br />
+  <% if current_user %>
+  	<% if user == current_user %>
+ 		<b><%= link_to 'edit', url_for(:controller => 'users', :action => 'edit', :id => user.id) %></b>
+	<% else %>
+		<% if current_user.friends.include?(user)  %>
+			<b><%= link_to 'unfollow', user_friend_path(:user_id => current_user.id, :id => user.id), :method => :delete %></b>
+		<% else %>
+			<b><%= link_to 'follow', follow_url(:id => user.id) %></b>
+		<% end %>
+	<% end %>
+  <% end %>
+<div id="userInfoBox">
+  <span id="userInfoSectionTitle"><%=h user.login %></span>
+  <div id="userStats">
+  	<b>reputation: </b><%=h user.reputation %><br/>
+  	<b>level: </b><%=h user.level %><br/>
+  	<b>pics: </b><%=h user.pics.count %><br/>
+  	<b>hearts Left: </b><%=h user.hearts_left %><br/>
+  	<% if user.location != nil && user.location != '' %>
+		<b>location: </b><%=h user.location %><br/>
+  	<% end %>
+  </div>
+</div>
+	<%= render :partial => "followers", :locals => { :user => user, :followers => followers } %> 
+	<%= render :partial => "following", :locals => { :user => user, :following => following } %> 
+	<% if current_user && current_user.id == user.id %>
+		<%= render :partial => "notifications/notifications", :locals => { :user => @user, :notifications => notifications } %> 
+	<% end %>	
+</div>

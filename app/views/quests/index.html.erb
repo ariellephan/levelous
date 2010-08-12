@@ -1,0 +1,24 @@
+<div id="quests">
+<h1>quests</h1>
+<% @quests.each do |quest| %>
+	<div class="quest">
+		<div class="questDetails">
+			<div class="questRequirements"><strong>level required:</strong> <%=h quest.level_required %></div>
+	    	<div class="questRewards"><%=h quest.hearts_awarded %> <%= image_tag '/images/heart.png'%>, <%=h quest.reputation_awarded %> <strong>rep</strong></div>
+	    </div>
+		<div class="questTitle"><%= link_to h(quest.title), quest %></div>
+    	<div class="questDescription"><%= (h quest.description) %></div>
+		
+    	
+		<% if current_user && current_user.is_admin %>
+			<%= link_to 'Edit', edit_quest_path(quest) %>
+    		<%= link_to 'Destroy', quest, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
+	</div>
+<% end %>
+<br />
+
+<% if current_user && current_user.is_admin%>
+	<%= link_to 'New quest', new_quest_path %>
+<% end %>
+</div>

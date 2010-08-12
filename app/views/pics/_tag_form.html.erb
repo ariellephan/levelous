@@ -1,0 +1,5 @@
+<p id="tagForm">
+  <% form_remote_for :tag, :html=>{:id => 'tag_form'}, :url => url_for(:controller => 'tags', :action => 'create') do %>
+    <b>Add tag: </b><input id="tag_name" name="tag[name]" size="30" type="text" /> <%= submit_tag "Add" %>
+  <% end %>
+</p>

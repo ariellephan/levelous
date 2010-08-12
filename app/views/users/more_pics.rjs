@@ -1,0 +1,9 @@
+@new_pics.each do |pic|
+  page.insert_html :bottom, :fancyPics, :partial => 'users/fancy_pic', :locals => { :pic => pic, :user => @user }
+end
+unless @show_more_pics
+  page.remove 'morePicsButton'
+end
+flash[:ajaxed] = true
+page.replace_html :notice, flash[:notice]
+flash[:notice] = nil

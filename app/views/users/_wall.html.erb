@@ -1,0 +1,11 @@
+<div id="wall">
+	<div id="wallForm">
+	  <%= render :partial => "post_form" %> 
+	</div>
+	<div id="posts">
+		<% for post in posts %>
+			<%= render :partial => "post", :object => post %> 
+		<% end %>
+	</div>
+	<%= render :partial => "more_posts_button" %> 
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Levelous | Pic by <%=h @user.login %></title>
+  <%= stylesheet_link_tag 'style' %>
+  <%= javascript_include_tag  :defaults %>
+  <META NAME="author" CONTENT="Andrés Bonilla">
+  <META NAME="subject" CONTENT="Photography">
+  <META NAME="Description" CONTENT="A community site for both established and aspiring photographers to upload photos and level up as they rank each other's work.">
+  <META NAME="Classification" CONTENT="Photography, amatuer photography">
+  <META NAME="Keywords" CONTENT="photography">
+  <META NAME="Geography" CONTENT="United States">
+  <META NAME="Language" CONTENT="English">
+  <META NAME="Revisit-After" CONTENT="1">
+  <META NAME="distribution" CONTENT="Global">
+  <META NAME="Robots" CONTENT="INDEX,FOLLOW">
+  <META NAME="country" CONTENT="United States">
+  <META NAME="rank" CONTENT="1">
+  <META NAME="keywords" CONTENT="<%=@keywords_string%>" > 
+	
+  <%= render :partial => "layouts/analytics" %>
+
+</head>
+<body>
+	<div id ="container">
+		<%= render :partial => "layouts/header" %>
+		<div id="pageWrap">
+			<p id="notice" style="color: #0071fc"><%= flash[:notice] %></p>
+			<%= render :partial => "pic" %> 
+			<%= render :partial => "comments" %>
+		</div> 
+		<div class="clearfooter"></div>
+	</div>
+	<%= render :partial => "layouts/bottom_links" %>
+	<%= render :partial => "layouts/barometer" %>
+</body>
+</html>

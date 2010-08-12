@@ -1,0 +1,19 @@
+<span id="userInfoSectionTitle">notifications</span>
+<% @notifications.each do |notification| %>
+    <% if notification.notification_type == 'follower' %>
+		<div class="notification">
+			<% user = User.find(notification.object_id) %>
+			You have a new <%= link_to 'follower', user %>.
+			<%= link_to ' x', notification, :method => :delete %>
+		</div><!--end notification -->
+	<% elsif notification.notification_type == 'comment' %>
+		<div class="notification">
+			<% pic = Pic.find(notification.object_id) %>
+			Your <%= link_to 'pic', pic %> has a new comment. 
+			<%= link_to ' x', notification, :method => :delete %>
+		</div><!--end notification -->
+	<% end %>
+<% end %>
+<div id="notificationsLink">
+	<%= link_to 'more', notifications_path %>
+</div>

@@ -1,0 +1,14 @@
+<%= render :partial => "layouts/head" %>
+<body>
+	<div id ="container">	
+			<%= render :partial => "layouts/header" %>
+		<div id="pageWrap">
+			<p id="notice" style="color: #0071fc"><%= flash[:notice] %></p>
+			<%= yield %>
+		</div> 
+		<div class="clearfooter"></div>
+	</div>
+	<%= render :partial => "layouts/bottom_links" %>
+	<%= render :partial => "layouts/barometer" %>
+</body>
+</html>

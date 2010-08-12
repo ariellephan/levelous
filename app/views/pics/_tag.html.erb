@@ -1,0 +1,6 @@
+<div id="tag<%= tagging.id %>" class="tag">	
+	<%=h tagging.tag.name %>
+	<% if current_user && (current_user.id == tagging.user_id || current_user.id == @pic.user_id || current_user.is_admin) %>
+		<span class="tagDelete"><%= link_to_remote 'x', { :url => url_for(:controller=>'tags', :action=>'destroy', :id=>tagging.id) }, :href => url_for(:controller=>'tags', :action=>'destroy', :id=>tagging.id) %></span>
+	<% end %>
+</div>

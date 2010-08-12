@@ -1,0 +1,15 @@
+<% if followers.size > 0 %>	
+	<div id="following">
+		<span id="userInfoSectionTitle">followers</span>
+		<div class="miniPics">
+			<% followers.each do |follower| %>
+				<% link_to follower.user do %>
+					<%=image_tag follower.user.avatar.url(:micro), :alt=>'' %>
+				<% end %>
+			<% end %>
+		</div>
+		<% if @more_followers %>
+			<b><%= link_to 'more', followers_url(:id => @user.id) %></b>
+		<% end %>		
+	</div>
+<% end %>

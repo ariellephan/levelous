@@ -1,0 +1,12 @@
+<h1>following</h1>
+<div id="feedColumn">	
+	<% unless @user.friends.empty? %>
+		<% @user.friends.each do |user| %>
+			<% link_to user do %>
+				<%=image_tag user.avatar.url(:thumb), :alt=>"" %>
+			<% end %>	
+		<% end %>
+	<% else %>
+		Not Following Anyone
+	<% end %>
+</div>

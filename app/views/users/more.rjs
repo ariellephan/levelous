@@ -1,0 +1,9 @@
+@new_users.each do |user|
+  page.insert_html :bottom, :leaderboardColumn, :partial => 'small_user_pic', :locals => { :user => user }
+end
+unless @show_more
+  page.remove 'moreButton'
+end
+flash[:ajaxed] = true
+page.replace_html :notice, flash[:notice]
+flash[:notice] = nil

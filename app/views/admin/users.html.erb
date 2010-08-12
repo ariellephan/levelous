@@ -1,0 +1,12 @@
+<h1>Users</h1>
+
+<table>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.login %></td>
+	<td><%if user.is_admin %>admin<% end %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,11 @@
+if @errorCode == 0
+  if @pic.taggings.count == 1
+    page.insert_html :before, :tagForm, :partial => "pics/tags", :locals => {:pic => @pic}
+  else
+    page.insert_html :bottom, :tags,  :partial => "pics/tag", :locals => { :tagging => @tagging, :pic => @pic }
+  end
+end  
+page[:tag_form].reset
+page.replace_html :notice, flash[:notice]
+flash[:pic_id] = flash[:pic_id]
+flash[:notice] = nil

@@ -1,0 +1,21 @@
+<div id="signup">
+<h1>signup</h1>
+<% form_for @user do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :email, 'email' %><br />
+  <%= f.text_field :email %><br />
+  <br />
+  <%= f.label :login, 'username' %><br />
+  <%= f.text_field :login %><br />
+  <br />
+  <%= f.label :password, 'password' %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.label :password_confirmation, 'confirm password' %><br />
+  <%= f.password_field :password_confirmation %><br />
+  <br />
+  <br />
+  <%= f.submit "signup" %>
+  or <%= link_to "login", login_url %> 
+<% end %>
+</div>

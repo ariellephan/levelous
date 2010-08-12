@@ -1,0 +1,35 @@
+<h1>New Quest</h1>
+
+<% form_for(@quest) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :level_required %><br />
+    <%= f.text_field :level_required %>
+  </p>
+  <p>
+    <%= f.label :hearts_awarded %><br />
+    <%= f.text_field :hearts_awarded %>
+  </p>
+  <p>
+    <%= f.label :reputation_awarded %><br />
+    <%= f.text_field :reputation_awarded %>
+  </p>
+  <p>
+    <%= f.label :count_required %><br />
+    <%= f.text_field :count_required %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', quests_path %>

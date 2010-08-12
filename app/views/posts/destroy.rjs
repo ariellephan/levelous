@@ -1,0 +1,4 @@
+page.remove("post#{@post.id}")
+page.replace_html :notice, flash[:notice]
+flash[:notice] = nil
+page[:post_form].reset

@@ -1,0 +1,7 @@
+<div id="commentForm">
+  <% form_remote_for :comment,:html=>{:id => 'comment_form'}, :url => url_for(:controller => 'comments', :action => 'create') do %>
+	<%= hidden_field(:pic, :id) %>
+	<textarea cols="40" id="comment_message" name="comment[message]" rows="7"></textarea><br />
+    <%= submit_tag "comment" %>
+  <% end %>
+</div>

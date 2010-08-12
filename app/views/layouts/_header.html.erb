@@ -1,0 +1,26 @@
+<div id="header">
+	<div id="headerContent">
+		<div id="title">
+			<%= link_to 'levelous', root_url %><span id="beta">beta</span>
+		</div> <!-- end title -->
+
+		<% if current_user %>
+			<div class="menuItem" id="loggedInBrowse"><%= link_to "browse", pics_url %></div>
+			<div class="menuItem"><%= link_to "feed", feed_url %></div>
+			<div class="menuItem"><%= link_to current_user.login, url_for(:id => current_user.id, :controller => 'users', :action => 'show') %></div>
+			<div class="menuItem"><%= link_to "quests", '/quests' %></div>
+			<div class="menuItem"><%= link_to "leaderboard", leaderboard_url %></div>
+			<div class="menuItem"><%= link_to "logout", logout_url %></div>
+		<% else %>
+			<div class="menuItem" id="loggedOutBrowse"><%= link_to "browse", pics_url %></div>
+			<div class="menuItem"><%= link_to "login", login_url %></div>
+			<div class="menuItem"><%= link_to "quests", '/quests' %></div>
+			<div class="menuItem"><%= link_to "leaderboard", leaderboard_url %></div>
+		<% end %>
+		<div id="search">
+		<% form_tag search_url(:action=>'pics'), :method => 'post' do %>
+			<%= text_field_tag :search, params[:search], :value => "search" %>
+		<% end %>
+		</div>
+	</div> <!-- end headerContent -->
+</div> <!-- end header -->

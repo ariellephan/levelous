@@ -1,0 +1,22 @@
+<div id="post<%=post.id%>" class="post">
+  <div class="postPic">
+	<%@author = User.find(post.author_id) %>
+	<% link_to @author do %>  
+		<%=image_tag @author.avatar.url(:mini) %>
+	<% end %>
+	</div><!-- end postPic -->
+	<div class="postContent">
+<span class="authorName"><%= link_to h(@author.login), @author %></span> <span class="authorLevel">(level <%=@author.level%>)</span>
+
+	<div class="postMessage"><%=h post.message %></div>
+	
+	<span class="postTime">
+	<%= render :partial => "users/time_ago", :locals => { :post => post } %> 
+	</span>
+	<% if current_user && (current_user.id == post.user_id || current_user.id == post.author_id || current_user.is_admin) %>
+		<span class="deletePost"><%= link_to_remote 'delete',  {:url => url_for(:controller=>'posts', :action=>'destroy',:id=>post.id)}, :href => url_for(:controller=>'posts', :action=>'destroy',:id=>post.id) %>
+		</span>
+		<% end %>
+	</div><!-- end postContent -->
+	<div style="clear:both;"></div>
+</div><!-- end post -->

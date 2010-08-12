@@ -1,0 +1,10 @@
+<div id="commentsSection">
+	<%= render :partial => "comment_form" %> 
+	<div id="comments">
+	  <% for comment in @comments %>		
+		<%= render :partial => "comment", :object => comment %> 
+	  <% end %>
+	</div>
+	<%= render :partial => "more_comments_button" %> 
+</div>
+

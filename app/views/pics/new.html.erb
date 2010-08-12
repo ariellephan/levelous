@@ -1,0 +1,48 @@
+<%= render :partial => "layouts/head" %>
+</head>
+<body>
+	<div id ="container">
+		<%= render :partial => "layouts/header" %>
+		<div id="pageWrap">
+			<p id="notice" style="color: #0071fc"><%= flash[:notice] %></p>
+			
+			<h1>upload pic</h1>
+
+			<% form_for @pic, :html => { :multipart => :true } do |f| %>
+			  <%= f.error_messages %>
+
+			 <p>
+			    <%= f.label :photo, 'photo' %><br />
+			    <%= f.file_field :photo %>
+			  </p>
+			<p>
+			<h4>	optional: </h4>
+
+			  <p>
+			    <%= f.label :title, 'title' %><br />
+			    <%= f.text_field :title %>
+			  </p>
+			  <p>
+			    <%= f.label :description %><br />
+			    <%= f.text_area :description %>
+			  </p>
+			  <%= f.hidden_field :user_id, :value => @current_user.id %>
+			  <p>
+			    <%= f.submit 'upload' %>  or <%= link_to 'cancel', @current_user %>
+			  </p>
+			<% end %>
+		</div> 
+		<div class="clearfooter"></div>
+	</div>
+	<%= render :partial => "layouts/bottom_links" %>
+	<%= render :partial => "layouts/barometer" %>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+  <div id="tagsSection">
+		<div id="tagsTitle"><b>Tags:</b></div>
+		<div id="tags">
+			<% @taggings.each do |tagging| %>
+				<%= render :partial => "pics/tag", :locals => { :tagging => tagging } %>  
+			<% end %>
+		</div>
+		<div style="clear:both;"></div>
+  </div>

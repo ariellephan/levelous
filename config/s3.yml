@@ -1,0 +1,14 @@
+development:
+  bucket: levelous.com
+  access_key_id: YOUR_ACCESS_KEY_GOES_HERE
+  secret_access_key: YOUR_SECRET_ACCESS_KEY_GOES_HERE
+
+test:
+  bucket: levelous.com
+  access_key_id: YOUR_ACCESS_KEY_GOES_HERE
+  secret_access_key: YOUR_SECRET_ACCESS_KEY_GOES_HERE
+
+production:
+  bucket: levelous.com
+  access_key_id: YOUR_ACCESS_KEY_GOES_HERE
+  secret_access_key: YOUR_SECRET_ACCESS_KEY_GOES_HERE

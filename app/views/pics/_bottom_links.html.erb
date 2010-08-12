@@ -1,0 +1,5 @@
+<% if current_user && ( current_user.owns_pic?(@pic) || current_user.is_admin )%>
+	<%= link_to 'edit', edit_pic_path(@pic) %> | <%= link_to 'delete', @pic, :confirm => 'Are you sure?', :method => :delete %> |
+<% end %>
+<%= link_to 'browse', pics_path %> | 
+<%= link_to 'random', random_path %>

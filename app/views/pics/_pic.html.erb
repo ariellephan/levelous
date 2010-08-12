@@ -1,0 +1,52 @@
+<div id="pic">
+  	<% link_to @next do %>
+    	<%= image_tag @pic.photo.url(:medium), :alt=>'' %>
+	<% end %>
+	<div id="picStats">
+  		<%= render :partial => "pic_hearts" %>
+		<span id="picViews"><b>Views: </b>
+		<%=h @pic.view_count %></span>
+		<span id="fullSize">
+			<%= link_to 'full size', @pic.photo.url(:original), :target => '_blank' %>
+		</span>
+		<span class="share">
+			<script>var fbShare = {
+			size: 'small',
+			}</script>
+			<script src="http://widgets.fbshare.me/files/fbshare.js"></script>
+		</span>
+		<span class="share">
+			<script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script>
+		</span>
+		<span class="share">
+		<script type="text/javascript">
+			tweetmeme_style = 'compact';
+		</script>
+		<script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+		</span>
+	</div><!--end picStats-->
+<div id="picInfo">
+	<div id="picUser"><b>User: </b>
+		<%= link_to @user.login, @user %></div>
+<% unless @pic.title == nil || @pic.title == '' %>
+  <div id="picTitle">
+  	<b>Title: </b>
+  	<%=h @pic.title %>
+  </div>
+<% end%>
+<% unless @pic.description == nil || @pic.description == '' %>
+  <div id="picDescription">
+  	<b>Description: </b>
+  	<%=h @pic.description %>
+  </div>
+<% end %>
+
+<% unless @taggings.size == 0 %>
+	<%= render :partial => "tags" %>
+<% end %> 
+<%= render :partial => "tag_form" %> 
+<br />
+</div><!--end picInfo-->
+<br />
+<%= render :partial => "bottom_links" %> 
+</div> <!-- end of pic -->

@@ -1,0 +1,9 @@
+@new_posts.each do |post|
+  page.insert_html :bottom, :posts, :partial => 'users/post', :locals => { :post => post, :user => @user }
+end
+unless @show_more_posts
+  page.remove 'morePostsButton'
+end
+flash[:ajaxed] = true
+page.replace_html :notice, flash[:notice]
+flash[:notice] = nil

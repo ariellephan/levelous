@@ -1,0 +1,3 @@
+<%= render :partial => "user_info", :locals => { :user => @user,:followers => @followers, :following => @following, :notifications=> @notifications } %> 
+<%= render :partial => "user_pics", :locals => { :user => @user } %> 
+<%= render :partial => "wall", :locals => { :posts => @posts } %> 

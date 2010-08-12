@@ -1,0 +1,10 @@
+# unless @comment.message == nil || @comment.message == ""
+#   page.insert_html :top, :comments, :partial => 'pics/comment', :object => @comment, :locals => { :pic => @pic }
+# end  
+# page[:comment_form].reset
+# page.replace_html :notice, flash[:notice]
+# 
+
+page.remove("comment#{@comment.id}")
+page.replace_html :notice, flash[:notice]
+flash[:notice] = nil

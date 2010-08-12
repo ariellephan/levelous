@@ -1,0 +1,5 @@
+<% if @show_more_pics %>
+	<div id="morePicsButton">
+		<%= link_to_remote 'more', {:url => more_pics_url }, :href => more_pics_url %>
+	</div>
+<% end %>

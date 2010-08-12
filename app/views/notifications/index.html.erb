@@ -1,0 +1,28 @@
+<h1>notifications</h1>
+
+
+
+<% @notifications.each do |notification| %>
+  <div class="notification">
+    <% if notification.notification_type == 'follower' %>
+		<% user = User.find(notification.object_id) %>
+		<%= link_to h(user.login), user %> is now following you. 
+		<span class="postTime">
+			<%= render :partial => "time_ago", :locals => { :notification => notification } %> 
+		</span>
+	<% elsif notification.notification_type == 'comment' %>
+		<% pic = Pic.find(notification.object_id) %>
+		You have a new comment on your <%= link_to 'pic', pic %>. 
+		<span class="postTime">
+			<%= render :partial => "time_ago", :locals => { :notification => notification } %> 
+		</span>	
+	<% elsif notification.notification_type == 'post' %>
+		<% user = User.find(notification.object_id) %>
+		<%= link_to h(user.login), user %> posted something on your <%= link_to 'wall', current_user %>. 
+		<span class="postTime">
+			<%= render :partial => "time_ago", :locals => { :notification => notification } %> 
+		</span>
+	<% end %>
+    <%= link_to ' x', notification, :method => :delete %>
+  </div><!--end notification -->
+<% end %>

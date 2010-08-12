@@ -1,0 +1,22 @@
+<div id="comment<%=comment.id%>" class="comment">
+  	<div class="commentPic">
+		<% user = User.find(comment.user_id) %>
+		<% link_to user do %>  
+			<%=image_tag user.avatar.url(:mini) %>
+		<% end %>
+	</div><!-- end commentPic -->
+	<div class="commentContent">
+		<span class="authorName"><%= link_to h(user.login), user %></span> <span class="authorLevel">(level <%=user.level%>)</span>
+
+	<div class="commentMessage"><%=h comment.message %></div>
+	
+	<span class="commentTime">
+	<%= render :partial => "pics/time_ago", :locals => { :comment => comment } %> 
+	</span>
+		<% if current_user && (current_user.id == comment.user_id || current_user.id == @pic.user_id || current_user.is_admin) %>
+		<span class="deleteComment"><%= link_to_remote 'delete', {:url => url_for(:controller=>'comments', :action=>'destroy',:id=>comment.id)}, :href => url_for(:controller=>'comments', :action=>'destroy',:id=>comment.id) %>
+		</span>
+		<% end %>
+	</div><!-- end commentContent -->
+	<div style="clear:both;"></div>
+</div><!-- end comment -->

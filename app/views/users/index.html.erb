@@ -1,0 +1,10 @@
+<div id="leaderboardColumn">		
+	<% @users.each do |user| %>
+		<% link_to user do %>
+			<%= image_tag user.avatar.url( :thumb ) %>
+		<% end %>	
+	<% end %>
+</div>
+<% if @show_more == true %>
+	<%= render :partial => "more_leaderboard_button" %> 
+<% end %>

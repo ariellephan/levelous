@@ -1,0 +1,5 @@
+<% form_remote_for :post, :html=>{:id => 'post_form'}, :url => url_for(:controller => 'posts', :action => 'create') do %>
+	<%= hidden_field(:user, :id) %>
+	<textarea cols="40" id="post_message" name="post[message]" rows="7"></textarea><br />
+	<%= submit_tag "post" %>
+<% end %>

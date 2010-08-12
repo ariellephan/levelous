@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pic_id: 1
+  tag_id: 1
+  user_id: 1
+
+two:
+  pic_id: 1
+  tag_id: 1
+  user_id: 1

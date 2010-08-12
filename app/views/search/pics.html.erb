@@ -1,0 +1,15 @@
+<h1>search: <%= h(@search) %></h1>
+<% if @pics.size == 0 %>
+	no results
+<% end %>
+<div id="feedColumn">	
+	
+	<% @pics.each do |pic| %>
+		<% link_to pic do %>
+			<%=image_tag pic.photo.url(:thumb) %>
+		<% end %>	
+	<% end %>
+</div>
+<% if @show_more && @pics.size > 0 %>
+	<%= render :partial => "more_button" %> 
+<% end %>

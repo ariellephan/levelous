@@ -1,0 +1,15 @@
+<% if following.count > 0 %>	
+	<div id="following">
+		<span id="userInfoSectionTitle">following</span>
+		<div class="miniPics">
+			<% for friend in following %>
+				<% link_to friend do %>
+					<%=image_tag friend.avatar.url(:micro), :alt=>'' %>
+				<% end %>
+			<% end %>
+		</div>
+		<% if @following_more %>
+			<b><%= link_to 'more', following_url(:id => @user.id) %></b> 
+		<% end %>
+	</div>
+<% end %>

@@ -1,0 +1,30 @@
+<div id="questShow">
+<p>
+  	<h2><%=h @quest.title %></h2>
+</p>
+
+<p>
+  	<%= h @quest.description %>
+</p>
+
+<p>
+	<b>Level required:</b>
+  	<%=h @quest.level_required %>
+</p>
+
+<p>
+	Reward: <%=h @quest.hearts_awarded %> <%= image_tag '/images/heart.png'%>, <%=h @quest.reputation_awarded %> <strong>rep</strong><br />
+</p>
+</div>
+
+<div id="completeQuest">
+	<%= link_to 'complete this quest', complete_url(:id => @quest.id)%>
+</div>
+
+<p>
+<% if current_user && current_user.is_admin %>	
+	<%= link_to 'edit', edit_quest_path(@quest) %> |
+<% end %>
+
+<%= link_to 'back', quests_path %>
+</p>

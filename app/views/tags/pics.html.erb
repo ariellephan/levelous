@@ -1,0 +1,8 @@
+<h1>tag: <%= h(@tag.name) %></h1>
+<div id="feedColumn">	
+	<% @pics.each do |pic| %>
+		<% link_to pic do %>
+			<%=image_tag pic.photo.url(:thumb), :alt=>"" %>
+		<% end %>	
+	<% end %>
+</div>

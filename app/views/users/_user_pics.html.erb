@@ -1,0 +1,18 @@
+<div id="userPics">
+	<div id="uploadLink">
+		<%= link_to 'upload', upload_path %>
+	</div>
+	<% if user.pics.empty? %>
+		<div id="noPics">
+			NO PICS YET.
+		</div>
+	<% else %>
+		<div id="fancyPics">
+		<% @pics.each do |pic| %>
+			<%= render :partial => "fancy_pic", :locals => { :pic => pic } %> 
+		<% end %>
+		</div>
+	<% end%>
+<%= render :partial => "more_pics_button" %>
+
+</div> 

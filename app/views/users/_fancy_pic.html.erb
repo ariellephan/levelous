@@ -1,0 +1,11 @@
+<div class="fancyPic">
+	<div class="fancyImg">	
+		<% link_to pic do %>
+			<%=image_tag pic.photo.url(:thumb), :alt=>'' %>
+		<% end %>
+	</div>
+	<div class="picHearts">
+		<%= link_to_remote '', { :url => heart_url(:id => pic.id) }, :href => heart_url(:id => pic.id) %>
+		<span id="heartCount<%=pic.id%>"> x <%= pic.hearts.count %></span>
+	</div>
+</div>

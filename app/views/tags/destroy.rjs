@@ -1,0 +1,7 @@
+page.remove("tag#{@tagging.id}")
+page.replace_html :notice, flash[:notice]
+flash[:pic_id] = flash[:pic_id]
+flash[:notice] = nil
+if @pic.taggings.count == 0
+  page.remove :tagsSection
+end

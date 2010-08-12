@@ -1,0 +1,49 @@
+<%= render :partial => "layouts/head" %>
+<body>
+	<div id ="container">
+		<%= render :partial => "layouts/header" %>
+		<div id="pageWrap">
+			<% unless (flash[:notice] == nil || flash[:notice] == '') %>
+				<p id="notice" style="color: #0071fc"><%= flash[:notice] %></p>
+			<% end %>
+			<ul id="browseOptionsContainer">
+				<% if flash[:category] == nil || flash[:category] == '' || flash[:category] == 'new' %>
+					<li style='background-color:#0071FC;'><%= link_to 'new', new_pics_path, :style => 'color:#fff;' %></li>
+				<% else %>
+					<li><%= link_to 'new', new_pics_path %></li>
+				<% end %>
+				
+				<% if flash[:category] == 'top' %>
+					<li style="background-color:#0071FC;"><%= link_to 'top', top_pics_path, :style => 'color:#fff;' %></li>
+				<% else %>
+					<li><%= link_to 'top', top_pics_path %></li>
+				<% end %>
+				
+				<% if flash[:category] == 'hot' %>
+					<li style="background-color:#0071FC;"><%= link_to 'hot', hot_pics_path, :style => 'color:#fff;' %></li>
+				<% else %>
+					<li><%= link_to 'hot', hot_pics_path %></li>
+				<% end %>
+			</ul>
+			<div id="picsColumn">	
+				<% @pics.each do |pic| %>
+					<% link_to pic do %>
+						<%=image_tag pic.photo.url(:thumb), :alt=>"" %>
+					<% end %>	
+				<% end %>
+			</div>
+				<div id="tagColumn">	
+					<% @tags.each do |tag| %>
+							<div class="columnTag"><%= link_to h(tag.name), tag_url(:tag =>h(tag.name)) %></div>			
+					<% end %>
+				</div>
+				<% if @show_more == true %>
+					<%= render :partial => "more_button" %> 
+				<% end %>
+		</div> 
+		<div class="clearfooter"></div>
+	</div>
+	<%= render :partial => "layouts/bottom_links" %>
+	<%= render :partial => "layouts/barometer" %>
+</body>
+</html>

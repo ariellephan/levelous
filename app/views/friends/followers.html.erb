@@ -1,0 +1,12 @@
+<h1>followers</h1>
+<div id="feedColumn">	
+	<% unless @followers.size == 0 %>
+		<% @followers.each do |follower| %>
+			<% link_to follower.user do %>
+				<%=image_tag follower.user.avatar.url(:thumb), :alt=>"" %>
+			<% end %>	
+		<% end %>
+	<% else %>
+		No Followers Yet
+	<% end %>
+</div>

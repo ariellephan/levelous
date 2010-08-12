@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyString
+  level_required: 1
+  hearts_awarded: 1
+  reputation_awarded: 1
+  count_required: 1
+
+two:
+  title: MyString
+  description: MyString
+  level_required: 1
+  hearts_awarded: 1
+  reputation_awarded: 1
+  count_required: 1

@@ -1,0 +1,8 @@
+unless @post.message == nil || @post.message == ""
+  page.insert_html :top, :posts, :partial => 'users/post', :object => @post
+end  
+page[:post_form].reset
+page.replace_html :notice, flash[:notice]
+flash[:notice] = nil
+flash[:ajaxed] = true
+

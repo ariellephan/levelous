@@ -1,0 +1,4 @@
+<div class="picHearts">
+	<%= link_to_remote '', {:url => heart_url(:id => @pic.id) }, :href => heart_url(:id => @pic.id) %>
+	<span id="heartCount<%=@pic.id%>"> x <%=h @pic.hearts.count %></span>
+</div>

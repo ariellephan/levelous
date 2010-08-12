@@ -1,0 +1,9 @@
+@new_comments.each do |comment|
+  page.insert_html :bottom, :comments, :partial => 'pics/comment', :locals => { :comment => comment, :pic => @pic }
+end
+unless @show_more_comments
+  page.remove 'moreCommentsButton'
+end
+flash[:ajaxed] = true
+page.replace_html :notice, flash[:notice]
+flash[:notice] = nil

@@ -1,0 +1,931 @@
+html, body { height: 100%; font-family:Helvetica; margin:0; padding:0; font-size:13px;}
+img { border-width:0px; }
+a, a:link, a:active, a:visited {color:#0071FC;}
+a:hover {text-decoration:underline;}
+li { color:#000; list-style:none; }
+a { text-decoration:none; }
+
+.picHearts a, .picHearts a:link, .picHearts a:active, .picHearts a:visited {
+	margin-top:-4px;
+	margin-right:4px;
+	display:block;
+	float:left;
+	width:22px;
+	height:17px;
+	background:url("/images/heart.png");
+}
+
+.picHearts a:hover{
+	margin-top:-4px;
+	margin-right:4px;
+	float:left;
+	display:block;
+	width:22px;
+	height:17px;
+	background:url("/images/heart2.png");
+}
+
+#container {
+	min-height: 100%;
+	margin-bottom: -90px;
+	position: relative;
+}
+
+#header {
+	height: 50px;
+	background:#0071fc;
+}
+
+	#headerContent {
+		margin: 0 auto;
+		width:960px;
+		height:50px;
+		color:#fff;
+	}
+	
+		#title{
+			float:left;
+			padding-top:13px;
+			font-weight:bold;
+		}
+
+			#title a{
+				text-decoration:none;
+				color:#fff;
+				font-weight:bold;
+				font-size:26px;
+			}
+		
+		#login {
+			padding-top:15px;
+			float:right;
+		}
+			
+			#login a {
+				color:#fff;
+			}
+			
+			.loginItem {
+				padding:2px;
+			}
+		
+		#loggedInBrowse {
+			margin-left:235px;
+		}
+		
+		#loggedOutBrowse {
+			margin-left:365px;
+		}
+			
+		.menuItem {
+			float:left;
+			margin-left:30px;
+			margin-top:20px;
+		}
+			
+			.menuItem  a {
+				color:#fff;
+			}
+		
+		#search {	
+			float:left;
+			margin-left:15px;
+			margin-top:7px;
+		}
+
+#pageWrap {
+	margin:0 auto;
+	width:960px;
+}
+
+
+
+	#browseLink {
+		margin-top:50px;
+		font-weight:bold;
+		font-size:30px;
+		text-align:right;
+	}
+
+		#browseLink a {
+			text-decoration:none;
+			color:#0071fc;
+			text-align:right;
+		}
+
+	#box {
+		width:960px;
+		float:left;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		background:#0071fc;
+	}
+
+		#slogan {
+			float:left;
+			margin-top:155px;
+			margin-left:100px;
+			font-weight:bold;
+			font-size:50px;
+			color:#fff;
+		}
+
+		#pics {
+			margin-left:110px;
+			float:left;
+			padding-top:9px;
+			padding-left:9px;
+			padding-right:6px;
+			padding-bottom:5px;
+			margin-top:15px;
+			margin-bottom:15px;
+			background:#fff;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			width:322px;
+		}
+
+			.smallPic img{
+				padding:2px;
+			}
+			
+#moreButton {
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	text-align:center;
+	font-size:18px;
+	width:523px;
+	margin-left:210px;
+	margin-top:10px;
+	background-color:#f6f6f6;
+	height:40px;
+	float:left;
+}
+
+	#moreButton a {
+		text-decoration:none;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		color:#0071FC;
+		display:block;
+		font-size:18px;
+		height:30px;
+		padding-top:10px;
+		text-align:center;
+	}
+
+	#moreButton:hover {
+		background-color:#0071FC;
+	}
+
+	#moreButton:hover > a {
+		color:#fff;
+	}
+		
+#browseOptionsContainer {
+	float:left;
+	padding-top:38px;
+}
+	
+	#browseOptionsContainer li {
+		font-size:18px;
+		margin:10px;
+		width:150px;
+		background-color:#f6f6f6;
+		text-align:right;
+	}
+	#browseOptionsContainer li a {
+		text-decoration:none;
+		color:#0071FC;
+		display:block;
+		height:35px;
+		padding-right:15px;
+		padding-top:15px;
+	}
+	
+		#browseOptionsContainer li:hover {
+			background-color:#0071FC;
+		}
+		
+		#browseOptionsContainer li:hover > a {
+			background-color:#0071FC;
+			color:#fff;
+		}
+
+#morePicsButton {
+	float:left;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	text-align:center;
+	font-size:18px;
+	width:312px;
+	margin-left:3px;
+	margin-top:10px;
+	background-color:#f6f6f6;
+	height:40px;
+}
+
+	#morePicsButton a {
+		text-decoration:none;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		color:#0071FC;
+		display:block;
+		font-size:18px;
+		height:30px;
+		padding-top:10px;
+		text-align:center;
+	}
+
+	#morePicsButton:hover {
+		background-color:#0071FC;
+	}
+
+	#morePicsButton:hover > a {
+		color:#fff;
+	}
+	
+#morePostsButton {
+	float:left;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	text-align:center;
+	font-size:18px;
+	width:330px;
+	background-color:#f6f6f6;
+	height:40px;
+}
+
+	#morePostsButton a {
+		text-decoration:none;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		color:#0071FC;
+		display:block;
+		font-size:18px;
+		height:30px;
+		padding-top:10px;
+		text-align:center;
+	}
+
+	#morePostsButton:hover {
+		background-color:#0071FC;
+	}
+
+	#morePostsButton:hover > a {
+		color:#fff;
+	}	
+
+#picsColumn {
+	float:left;
+	width:535px;
+	padding-top:60px;
+}
+
+	#picsColumn a img {
+		padding:1px;
+	}
+	
+#userInfo, #userPics, #wall {
+	float:left;
+	padding-top:50px;
+}
+
+#userInfo {
+	width:200px;
+}
+
+#userPics {
+	padding-left:55px;
+	padding-right:45px;
+	width:330px;
+}
+
+#uploadLink {
+	float:left;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	text-align:center;
+	font-size:18px;
+	width:312px;
+	margin-left:3px;
+	margin-bottom:10px;
+	background-color:#f6f6f6;
+	height:40px;
+}
+
+	#uploadLink a, #uploadLink a:link, #uploadLink a:active, #uploadLink a:visited {
+		text-decoration:none;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		color:#0071FC;
+		display:block;
+		font-size:18px;
+		height:30px;
+		padding-top:10px;
+		text-align:center;
+	}
+
+	#uploadLink:hover {
+		background-color:#0071FC;
+	}
+
+	#uploadLink:hover > a {
+		color:#fff;
+	}
+
+.fancyPic {
+	padding:3px;
+	float:left;
+}
+
+.miniPics {
+	margin:5px 0;
+}
+
+#wall {
+	width:330px;
+}
+
+.post {
+	border: 3px solid #e3e3e3;
+	margin:20px 0;
+	padding:10px;
+	width:307px;
+}
+
+.postContent {
+	float:left;
+	width:230px;
+}
+
+.postPic {
+	margin-right:8px;
+	float:left;
+}
+
+.authorName {
+	font-style:bold;
+	font-size:18px;
+	margin-right:4px;
+}
+
+.authorLevel {
+	color:#999;
+	font-size:14px;
+}
+
+.postMessage {
+	font-size:13px;
+	padding:2px 0 6px 0;
+}
+
+.postTime {
+	color:#999;
+	font-size:13px;
+}
+.deletePost {
+	float:right;
+}
+.deletePost a {
+	color:#999;
+	font-size:13px;
+}
+
+#wallForm input {
+	margin:5px 0 0 0;
+}
+
+#pic {
+	margin-top:50px;
+	float:left;
+	max-width:600px;
+}
+
+#comment_message, #post_message {
+	width: 330px;
+}
+
+#commentsSection {
+	float:right;
+	margin-top:50px;
+	width:330px;	
+}
+
+	#commentForm input {
+		margin:5px 0 0 0;
+	}
+
+
+.comment {
+	width:307px;
+	border: 3px solid #e3e3e3;
+	margin:20px 0;
+	padding:10px;
+}
+
+	.commentContent {
+		float:left;
+		width:230px;
+	}
+
+	.commentPic {
+		margin-right:8px;
+		float:left;
+	}
+
+	.authorName {
+		font-style:bold;
+		font-size:18px;
+		margin-right:4px;
+	}
+
+	.authorLevel {
+		color:#999;
+		font-size:14px;
+	}
+
+	.commentMessage {
+		font-size:13px;
+		padding:2px 0 6px 0;
+	}
+
+	.commentTime {
+		color:#999;
+		font-size:13px;
+	}
+	.deleteComment {
+		float:right;
+	}
+	.deleteComment a {
+		color:#999;
+		font-size:13px;
+	}
+
+	#moreCommentsButton {
+		float:left;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		text-align:center;
+		font-size:18px;
+		width:330px;
+		background-color:#f6f6f6;
+		height:40px;
+	}
+
+		#moreCommentsButton a {
+			text-decoration:none;
+			-moz-border-radius: 20px;
+			-webkit-border-radius: 20px;
+			color:#0071FC;
+			display:block;
+			font-size:18px;
+			height:30px;
+			padding-top:10px;
+			text-align:center;
+		}
+
+		#moreCommentsButton:hover {
+			background-color:#0071FC;
+		}
+
+		#moreCommentsButton:hover > a {
+			color:#fff;
+		}
+		
+#leaderboardColumn {
+	width:550px;
+	padding-top:60px;
+	padding-left:220px;
+}
+
+	#leaderboardColumn a img {
+		padding:1px;
+	}		
+
+#quests {
+	margin-top:50px;
+	margin-left:166px;
+}
+
+.quest {
+	border: 3px solid #e3e3e3;
+	margin:10px 0;
+	padding:10px;
+	width:600px;
+}
+
+.questTitle {
+	font-size:18px;
+	font-weight:bold;
+	width:500px;
+}
+
+.questDescription {
+	width:500px;
+	margin:5px 0 0 0;
+}
+
+.questDetails {
+	float:right;
+}
+
+	.questRewards {
+		margin-top:5px;
+	}
+
+#questShow {
+	border: 3px solid #e3e3e3;
+	padding:0 20px;
+	width:500px;
+	margin-top:50px;
+}
+
+#completeQuest {
+	margin:20px 0;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	text-align:center;
+	width:250px;
+	background-color:#f6f6f6;
+	height:40px;
+}
+
+	#completeQuest a {
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		color:#0071FC;
+		display:block;
+		font-size:16px;
+		height:30px;
+		padding-top:10px;
+		text-align:center;
+	}
+
+	#completeQuest:hover {
+		background-color:#0071FC;
+	}
+
+	#completeQuest:hover > a {
+		color:#fff;
+	}
+
+#about {
+	font-size:50px;
+	color:#bbb;
+}
+
+#terms {
+	font-size:16px;
+	line-height:22px;
+	width:700px;
+	padding-left:130px;
+}
+
+#box404 {
+	width:960px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	background:#0071fc;
+	margin-top:80px;
+	height:366px;
+}
+	#box404 #slogan {
+		margin-left:212px;
+	}
+	
+	#backLink404 {
+		padding-top:300px;
+		text-align:center;
+	}
+	
+	#backLink404 a {
+		font-weight:bold;
+		font-size:25px;
+		color:#fff;
+	}
+	
+.picHearts {
+	font-size:13px;
+	font-weight:bold;
+	display:inline;
+	float:left;
+}	
+
+#picViews {
+	float:left;
+	margin-left:20px;
+}
+
+#fullSize {
+	float:left;
+	margin-left:20px;
+}
+
+.share {
+	margin-left:20px;
+	float:left;
+}
+	
+#picUser {
+	margin-top:40px;
+}
+	
+#tags {
+	border: 3px solid #e3e3e3;
+	padding:5px;
+	margin-top:10px;
+	max-width:400px;
+	float:left;
+}	
+
+#tagsTitle {
+	margin-top:15px;
+}
+	
+.tag {
+	float:left;
+	margin:4px 8px;
+}	
+
+.tagDelete a {
+	color:#ff0000;
+	font-weight:bold;
+}
+	
+.clearfooter {
+	height: 90px;
+	clear: both;
+}
+
+#picTitle {
+	margin-top:15px;
+}
+
+#picDescription {
+	margin-top:15px;
+}
+
+#feedColumn {
+	width:550px;
+	padding-top:11px;
+	padding-left:220px;
+}
+
+	#feedColumn a img {
+		padding:1px;
+	}
+
+#moreFeedButton {
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	text-align:center;
+	font-size:18px;
+	width:523px;
+	margin-left:220px;
+	margin-top:10px;
+	background-color:#f6f6f6;
+	height:40px;
+}
+
+	#moreFeedButton a {
+		text-decoration:none;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		color:#0071FC;
+		display:block;
+		font-size:18px;
+		height:30px;
+		padding-top:10px;
+		text-align:center;
+	}
+
+	#moreFeedButton:hover {
+		background-color:#0071FC;
+	}
+
+	#moreFeedButton:hover > a {
+		color:#fff;
+	}
+
+.fancyImg {
+	margin-bottom:5px;
+}
+
+#beta {
+	margin-left:10px;
+	font-size:14px;
+}
+
+#picStats {
+	margin-top:5px;
+}
+
+.notification {
+	margin-top:5px;
+}
+
+#userStats {
+	margin-top:5px;
+}
+
+#following {
+	margin-bottom:15px;
+}
+
+#userInfoBox {
+	margin-top:5px;
+	margin-bottom:15px;
+}
+
+#userInfoSectionTitle {
+	font-size:26px;
+	font-weight:bold;
+}
+
+#notificationsLink {
+	margin-top:5px;
+}
+
+#tagColumn {
+	float:left;
+	height:390px;
+	margin-top:60px;
+	width:195px;
+}
+
+.columnTag {
+	height:19px;
+	margin-bottom:2px;
+	font-size:18px;
+}
+
+#footer {
+	text-align:center;
+	height: 90px;
+	position: relative;	
+}
+	#footerLinks {
+		padding-top:55px;
+	}
+	
+	#footer a {
+		color:#0071fc;
+		font-size:13px;
+		padding:5px;
+	}
+	
+	
+	
+	
+	/* =Barometer feedback tab
+	--------------------------------------------------------*/
+
+	a#barometer_tab {
+		background-image:url(http://getbarometer.s3.amazonaws.com/install/images/feedback_tab.png);
+		background-color:#0071FC;
+		color:#FFFFFF;
+		cursor:pointer;
+		height:102px;
+		left:0;
+		margin-left:-7px;
+		overflow:hidden;
+		position:fixed;
+		text-indent:-100000px;
+		top:40%;
+		width:42px;
+		z-index:100000;	
+		}
+
+	/* =Barometer Overlay
+	--------------------------------------------------------*/
+
+	#barometer_overlay { 
+		top:0; 
+		left:0; 
+		width: 100%; 
+		height: 100%; 
+		position: fixed; 
+		_position: absolute; 
+		z-index: 1000000; 
+		}
+
+	#barometer_overlay * { 
+		margin: 0; 
+		padding: 0; 
+		font-family: Arial, Helvetica, sans-serif; 
+		font-style:normal; 
+		font-variant:normal; 
+		font-size: 12px; 
+		color:#333;
+		}
+
+	/* =Barometer Overlay -> Main
+	--------------------------------------------------------*/
+
+	#barometer_main { 
+		width: 550px; 
+		height: 100%; 
+		margin: 0 auto; 
+		z-index:2; 
+		position:relative; 
+		background-color: transparent;
+		}
+
+	#barometer_main div { 
+		padding: 5px 20px 0 20px; 
+		margin:0; 
+		background: #EEE; 
+		overflow:none; 
+		border-right: solid 2px #000; 
+		border-left: solid 2px #000; 
+		}
+
+	#barometer_overlay #barometer_main #overlay_loading h2 {
+		padding: 10px 0; 
+		font-size:28px; 
+		}
+
+	#barometer_overlay #barometer_main #barometer_close:hover {
+		background-position:-42px 0;
+		}
+
+	#barometer_overlay #barometer_main a#barometer_close {
+		background-image:url(http://getbarometer.s3.amazonaws.com/install/images/barometer_close.png);
+		cursor:pointer;
+		height:42px;
+		outline-color:-moz-use-text-color;
+		outline-style:none;
+		outline-width:medium;
+		overflow:hidden;
+		position:absolute;
+		top:-23px;
+		right:-22px;
+		width:42px;
+		z-index:4;
+		border: none;
+		}
+
+	#barometer_overlay #barometer_main span {
+		background:url(http://getbarometer.s3.amazonaws.com/install/images/close.png) no-repeat scroll 33px 0 transparent;
+		color:#FFFFFF;
+		cursor:pointer;
+		float:right;
+		font-size:11px;
+		height:20px;
+		padding-right:20px;
+		text-decoration:underline;
+	}
+
+	#barometer_iframe {
+	    width: 550px;
+	    height: 100%;
+	    background: transparent url(http://getbarometer.s3.amazonaws.com/install/images/barometer_loading.png) no-repeat;
+	}
+	#barometer_iframe.loaded {
+	      background: transparent;
+	}
+
+
+	/* =Barometer Overlay -> Main -> Overlay header
+	--------------------------------------------------------*/
+
+	#barometer_overlay #barometer_main #overlay_header {
+	 	padding:6px 5px 1px 0; 
+		background-color:#0071FC;
+	 	font-weight: bold; 
+		height:18px; 
+		border: solid 2px #000;
+		}
+
+	#barometer_overlay #barometer_main #overlay_header a {
+		color:#fff;
+		float:left;
+		font-size:15px;
+		margin-left:5px;
+		font-weight: normal; 
+		}
+
+	#barometer_overlay #barometer_main #overlay_header span {
+	 	float:right; 
+		height:20px; 
+		padding-right:20px; 
+		background: transparent url(http://getbarometer.s3.amazonaws.com/install/images/close.png) no-repeat 33px 0;
+	 	text-decoration:underline; 
+		font-size:11px; 
+		cursor:pointer; 
+		color: #fff;
+		}
+
+	/* =Barometer screen id - used to close barometer 
+	--------------------------------------------------------*/
+
+	#barometer_screen { 
+		top:0; 
+		left:0; 
+		z-index:1;
+		width: 100%; 
+		position: absolute; 
+		background-color: #000; 
+		opacity: 0.42; filter:alpha(opacity=42); -moz-opacity: 0.42;
+		}

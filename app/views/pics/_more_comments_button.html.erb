@@ -1,0 +1,5 @@
+<% if @show_more_comments %>
+	<div id="moreCommentsButton">
+		<%= link_to_remote 'more', {:url => more_comments_url }, :href => more_comments_url %>
+	</div>
+<% end %>
