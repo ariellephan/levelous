@@ -1,9 +1,5 @@
-rpg
-
-The project currently codenamed rpg is a photo-sharing online role-playing game.
-rpg is built using Ruby on Rails. 
-
-The project currently codenamed rpg is a photo sharing online role-playing game.
+Levelous is a photo-sharing online role-playing game.
+It is built using Ruby on Rails.
 
 -Users have rep. Users have a level.Users start with 10 hearts to give out.
 -Users upload pics. Users heart pics.
@@ -12,8 +8,4 @@ The project currently codenamed rpg is a photo sharing online role-playing game.
 -if you earn rep you go up in level.
 -Users complete quests to earn more hearts, and also get a daily heart allowance, which goes up with level.
 
-The site is currently in pre-beta, and is scheduled to enter beta march 010.
-
-The site is currently hosted in a development environment, so it may be slow or sometimes unresponsive. Please leave any comments in the feedback section. Ideas and bugs are greatly appreciated.
-
-rpg uses Authlogic, ImageMagick, and Paperclip.
+rpg uses the Authlogic, and Paperclip gems.
